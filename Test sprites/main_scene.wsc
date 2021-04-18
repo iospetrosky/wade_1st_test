@@ -3,8 +3,8 @@
 		{
 			"type": "SceneObject",
 			"position": {
-				"x": -50,
-				"y": -2
+				"x": -40.885767906034054,
+				"y": -0.17715358120681102
 			},
 			"rotation": 0,
 			"behaviors": [],
@@ -144,6 +144,96 @@
 				"y": "center"
 			},
 			"name": "SceneObject_1",
+			"isTemplate": false,
+			"path": "",
+			"addToScene": {
+				"autoListen": true,
+				"params": null
+			},
+			"properties": {}
+		},
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": -358.87851403839574,
+				"y": 178.9067963158768
+			},
+			"rotation": 0,
+			"behaviors": [],
+			"sprites": [
+				{
+					"type": "Sprite",
+					"animations": {
+						"Animation_0": {
+							"type": "Animation",
+							"name": "Animation_0",
+							"startFrame": 6,
+							"endFrame": 8,
+							"numCells": {
+								"x": 3,
+								"y": 4
+							},
+							"image": "boy tan salopette.png",
+							"imageArea": {
+								"minX": 0,
+								"minY": 0,
+								"maxX": 1,
+								"maxY": 1
+							},
+							"speed": 8,
+							"looping": true,
+							"playMode": "forward",
+							"autoResize": true,
+							"offset": {
+								"x": 0,
+								"y": 0
+							},
+							"stopped": false,
+							"properties": {}
+						}
+					},
+					"currentAnimation": "Animation_0",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 1,
+					"autoResize": false,
+					"visible": true,
+					"image": "boy.png",
+					"imageArea": {
+						"minX": 0,
+						"minY": 0,
+						"maxX": 1,
+						"maxY": 1
+					},
+					"alwaysDraw": false,
+					"name": "Boy",
+					"drawModifiers": [],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 80,
+						"y": 120
+					}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"grid": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "SceneObject_2",
 			"isTemplate": false,
 			"path": "",
 			"addToScene": {
