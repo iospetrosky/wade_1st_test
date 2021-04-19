@@ -3,8 +3,8 @@
 		{
 			"type": "SceneObject",
 			"position": {
-				"x": 2,
-				"y": 0
+				"x": 3,
+				"y": -1
 			},
 			"rotation": 0,
 			"behaviors": [],
@@ -65,11 +65,372 @@
 		{
 			"type": "SceneObject",
 			"position": {
-				"x": 11.714135473063362,
-				"y": -69.21989143173805
+				"x": -71.28586452693663,
+				"y": -131.21989143173806
 			},
 			"rotation": 0,
-			"behaviors": [],
+			"behaviors": [
+				{
+					"name": "PhysicsObject",
+					"properties": {
+						"customEditor": {
+							"title": "Edit Physics Shapes",
+							"module": "physicsShapeEditor"
+						},
+						"bodyType": "dynamic",
+						"bodyType_options": [
+							"static",
+							"dynamic",
+							"kinematic"
+						],
+						"bullet": false,
+						"gravityScale": 0,
+						"linearDamping": 0,
+						"angularDamping": 0,
+						"fixedRotation": true,
+						"allowSleeping": true,
+						"active": true,
+						"fixtures": {
+							"0": {
+								"density": 1,
+								"friction": 0.5,
+								"restitution": 1,
+								"shapeType": "polygon",
+								"shapeType_options": [
+									"box",
+									"circle",
+									"polygon",
+									"edge",
+									"chain",
+									"loopChain"
+								],
+								"spriteIndex": 0,
+								"isSensor": false,
+								"autoCalculateShape": false,
+								"filter": {
+									"groupIndex": 0,
+									"categoryBits": 1,
+									"maskBits": 65535
+								},
+								"offset": {
+									"x": 0,
+									"y": 0,
+									"ang": 0
+								},
+								"vertices": [
+									{
+										"x": -21,
+										"y": 58
+									},
+									{
+										"x": -26,
+										"y": 10
+									},
+									{
+										"x": -14,
+										"y": -46
+									},
+									{
+										"x": 15,
+										"y": -44
+									},
+									{
+										"x": 26,
+										"y": 5
+									},
+									{
+										"x": 22,
+										"y": 58
+									}
+								]
+							},
+							"isPseudoArray": true,
+							"length": 1,
+							"elementTemplate": {
+								"density": 1,
+								"friction": 0.5,
+								"restitution": 1,
+								"shapeType": "box",
+								"shapeType_options": [
+									"box",
+									"circle",
+									"polygon",
+									"edge",
+									"chain",
+									"loopChain"
+								],
+								"spriteIndex": 0,
+								"isSensor": false,
+								"autoCalculateShape": true,
+								"filter": {
+									"groupIndex": 0,
+									"categoryBits": 1,
+									"maskBits": 65535
+								},
+								"offset": {
+									"x": 0,
+									"y": 0,
+									"ang": 0
+								},
+								"vertices": [
+									{
+										"x": 0,
+										"y": 0
+									}
+								]
+							}
+						}
+					},
+					"functions": {
+						"onAddToScene": {
+							"name": "onAddToScene",
+							"args": [
+								"parameters"
+							]
+						},
+						"onRemoveFromScene": {
+							"name": "onRemoveFromScene",
+							"args": []
+						},
+						"isAwake": {
+							"name": "isAwake",
+							"args": []
+						},
+						"setAwake": {
+							"name": "setAwake",
+							"args": [
+								"value"
+							]
+						},
+						"addFixture": {
+							"name": "addFixture",
+							"args": [
+								"fData"
+							]
+						},
+						"removeFixture": {
+							"name": "removeFixture",
+							"args": [
+								"fixture"
+							]
+						},
+						"getFixtureList": {
+							"name": "getFixtureList",
+							"args": []
+						},
+						"getJointList": {
+							"name": "getJointList",
+							"args": []
+						},
+						"getDefinition": {
+							"name": "getDefinition",
+							"args": []
+						},
+						"applyForce": {
+							"name": "applyForce",
+							"args": [
+								"force",
+								"power",
+								"offset"
+							]
+						},
+						"applyImpulse": {
+							"name": "applyImpulse",
+							"args": [
+								"impulse",
+								"power",
+								"offset"
+							]
+						},
+						"applyTorque": {
+							"name": "applyTorque",
+							"args": [
+								"torque"
+							]
+						},
+						"addMouseJoint": {
+							"name": "addMouseJoint",
+							"args": [
+								"offset"
+							]
+						},
+						"updateMouseJoint": {
+							"name": "updateMouseJoint",
+							"args": [
+								"joint",
+								"pos"
+							]
+						},
+						"removeMouseJoint": {
+							"name": "removeMouseJoint",
+							"args": [
+								"joint"
+							]
+						},
+						"onUpdate": {
+							"name": "onUpdate",
+							"args": []
+						},
+						"draw_": {
+							"name": "draw_",
+							"args": [
+								"color",
+								"originalDraw"
+							]
+						},
+						"clone": {
+							"name": "clone",
+							"args": [
+								"newOwner"
+							]
+						},
+						"addJoint": {
+							"name": "addJoint",
+							"args": [
+								"joint"
+							]
+						},
+						"removeJoint": {
+							"name": "removeJoint",
+							"args": [
+								"joint"
+							]
+						},
+						"getB2dBody": {
+							"name": "getB2dBody",
+							"args": []
+						}
+					},
+					"tips": {
+						"bodyType": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.bodyType</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The type of physics body. This is 'static' by default, indicating an immovable object. It can also be 'dynamic' or 'kinematic'\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"bullet": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.bullet</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Whether the object is a bullet (a fast-moving object), which implies that it needs continuous collision detection to avoid going through objects\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"gravityScale": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.gravityScale</b><i> </i></div><br/><span class=\"code_tooltip_description\"> A number to multiply the effect of gravity on this body. Setting this to 0 means that the object is not affected by gravity.\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"linearDamping": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.linearDamping</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The amount of damping (reduction in velocity) that is caused by linear motion. Usually between 0 and 1 (0 by default).\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"angularDamping": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.angularDamping</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The amount of damping (reduction in velocity) that is caused by angular motion. Usually between 0 and 1 (0 by default).\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"fixedRotation": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.fixedRotation</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Whether this object should only translate and never rotate.\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"allowSleeping": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.allowSleeping</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Whether this object should be allowed to sleep. Objects are set to sleep when resting on other objects, to speed up the simulation.\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"active": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.active</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Whether the physics object is active. Inactive objects are not simulated and cannot be collided with.\r</span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"isAwake": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.isAwake</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Check whether the physics object is awake or not. Objects can be not awake when they're resting on top of other objects, to improve the performance of the simulation\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Whether the physics object is awake\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"setAwake": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.setAwake</b><i> (value)\r</i></div><br/><span class=\"code_tooltip_description\"> Set a physics object as awake or not. Objects can be not awake when they're resting on top of other objects, to improve the performance of the simulation\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> boolean </span> <span class=\"code_tooltip_param_name\"> value </span>: <span class=\"code_tooltip_description\">Whether the physics object should be awake\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"addFixture": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.addFixture</b><i> (fData)\r</i></div><br/><span class=\"code_tooltip_description\"> Add a fixture to the physics body. A fixture is a convex shape with physics properties, and each physics body can have any number of fixtures.\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> fData </span>: <span class=\"code_tooltip_description\">The fixture data for the fixture to add to this body. The data structure is as follows - please refer to the box2d documentation for a full explanation of each parameter: <pre>\r</span></span><br/><span class=\"code_tooltip_description\">density: number\r</span><br/><span class=\"code_tooltip_description\">filter: {categoryBits: number, groupIndex: number, maskBits: number}\r</span><br/><span class=\"code_tooltip_description\">friction: number\r</span><br/><span class=\"code_tooltip_description\">isSensor: number\r</span><br/><span class=\"code_tooltip_description\">restitution: number\r</span><br/><span class=\"code_tooltip_description\">offset: {x: number, y: number, ang: number}\r</span><br/><span class=\"code_tooltip_description\">shapeType: string (valid values are 'edge', 'chain', 'loopChain', 'box', 'circle', 'polygon')\r</span><br/><span class=\"code_tooltip_description\">vertices: [{x: number, y: number}]\r</span><br/><span class=\"code_tooltip_description\"></pre>\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> object </span>: The fixture object. This can later be used to remove a fixture through removeFixture().\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"removeFixture": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.removeFixture</b><i> (fixture)\r</i></div><br/><span class=\"code_tooltip_description\"> removeFixture Remove a fixture\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> fixture </span>: <span class=\"code_tooltip_description\">The fixture object to remove from this physics body, as previously returned by a call to createFixture\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"getFixtureList": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.getFixtureList</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Get a list of fixtures attached to this object\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> Array </span>: An array of fixtures attached to this physics body\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"getJointList": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.getJointList</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Get a list of joints attached to this object\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> Array </span>: an array of joint objects attached to this body\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"applyForce": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.applyForce</b><i> (force, power, offset)\r</i></div><br/><span class=\"code_tooltip_description\"> applyForce\r</span><br/><span class=\"code_tooltip_description\"> Apply a force to a box2d body \r</span><br/><span class=\"code_tooltip_description\"> As this uses a normalized vector, do not convert the force using wadeToBox.\r</span><br/><span class=\"code_tooltip_description\"> However, since the y axis are reversed in wade vs box2d, multiply the force.y by -1\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> force </span>: <span class=\"code_tooltip_description\">a vector with x and y parameters designating the direction of the force\r</span></span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> number </span> <span class=\"code_tooltip_param_name\"> power </span>: <span class=\"code_tooltip_description\">a number to multiply the bodies mass by to generate the total power\r</span></span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> offset </span>: <span class=\"code_tooltip_description\">a vector with x and y parameters designating the offset point at which to apply the force\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"applyImpulse": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.applyImpulse</b><i> (impulse, power, offset)\r</i></div><br/><span class=\"code_tooltip_description\"> applyImpulse\r</span><br/><span class=\"code_tooltip_description\"> Apply an impulse to a box2d body \r</span><br/><span class=\"code_tooltip_description\"> As this uses a normalized vector, do not convert the impulse using wadeToBox.\r</span><br/><span class=\"code_tooltip_description\"> However, since the y axis are reversed in wade vs box2d, multiply the impulse.y by -1\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> impulse </span>: <span class=\"code_tooltip_description\">a vector with x and y parameters designating the direction of the impulse\r</span></span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> number </span> <span class=\"code_tooltip_param_name\"> power </span>: <span class=\"code_tooltip_description\">a number to multiply the bodies mass by to generate the total power\r</span></span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> offset </span>: <span class=\"code_tooltip_description\">a vector with x and y parameters designating the offset point at which to apply the impulse\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"applyTorque": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.applyTorque</b><i> (torque)\r</i></div><br/><span class=\"code_tooltip_description\"> applyTorque\r</span><br/><span class=\"code_tooltip_description\"> Apply a torque to the body in newton-meters\r</span><br/><span class=\"code_tooltip_description\"> Affects the angular velocity but not the linear velocity\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> {number) </span>: <span class=\"code_tooltip_description\">torque the amount of torque to apply in newton*meters\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"addMouseJoint": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.addMouseJoint</b><i> (offset)\r</i></div><br/><span class=\"code_tooltip_description\"> Add a mouse joint. A mouse joint is a target point that the object will try to follow when possible.\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> {x: number, y: number} </span> <span class=\"code_tooltip_param_name\"> offset </span><span class=\"code_tooltip_param_optional\"> (optional)</span>: <span class=\"code_tooltip_description\">The point in object-space that will try to track the target point.\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> : A mouse joint object\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"updateMouseJoint": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.updateMouseJoint</b><i> (joint, pos)\r</i></div><br/><span class=\"code_tooltip_description\"> Update the position of the target point for a mouse joint\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> joint </span><span class=\"code_tooltip_param_optional\"> (optional)</span>: <span class=\"code_tooltip_description\">The joint object to update, as previously returned by a call to addMouseJoint(). It can be omitted, in which case the first mouse joint will be used.\r</span></span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> {x: number, y: number} </span> <span class=\"code_tooltip_param_name\"> pos </span>: <span class=\"code_tooltip_description\">The new position of the target point\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"removeMouseJoint": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.removeMouseJoint</b><i> (joint)\r</i></div><br/><span class=\"code_tooltip_description\"> Remove a mouse joint from this object\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> object </span> <span class=\"code_tooltip_param_name\"> joint </span><span class=\"code_tooltip_param_optional\"> (optional)</span>: <span class=\"code_tooltip_description\">The joint object to remove. If omitted, the first mouse joint will be removed.\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						],
+						"draw_": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>PhysicsObject.draw_</b><i> (color, originalDraw)\r</i></div><br/><span class=\"code_tooltip_description\"> Get a debug draw function that shows the physics object using vector graphics. It currently only works for circle shapes.\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> string </span> <span class=\"code_tooltip_param_name\"> color </span><span class=\"code_tooltip_param_optional\"> (optional)</span>: <span class=\"code_tooltip_description\">The color to use to draw the silhouette of the physics object. Default is 'green'.\r</span></span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> function </span> <span class=\"code_tooltip_param_name\"> originalDraw </span><span class=\"code_tooltip_param_optional\"> (optional)</span>: <span class=\"code_tooltip_description\">A draw function to call after drawing the silhouette of the physics object.\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> function </span>: A draw function to use with Sprite.setDrawFunction()\r</span></span><br/>",
+								"source": "PhysicsObject"
+							}
+						]
+					}
+				}
+			],
 			"sprites": [
 				{
 					"type": "Sprite",
@@ -79,6 +440,33 @@
 							"name": "Walk_left",
 							"startFrame": 3,
 							"endFrame": 5,
+							"numCells": {
+								"x": 3,
+								"y": 4
+							},
+							"image": "male blonde t-shirt.png",
+							"imageArea": {
+								"minX": 0,
+								"minY": 0,
+								"maxX": 1,
+								"maxY": 1
+							},
+							"speed": 7,
+							"looping": true,
+							"playMode": "forward",
+							"autoResize": true,
+							"offset": {
+								"x": 0,
+								"y": 0
+							},
+							"stopped": false,
+							"properties": {}
+						},
+						"Walk_right": {
+							"type": "Animation",
+							"name": "Walk_right",
+							"startFrame": 6,
+							"endFrame": 8,
 							"numCells": {
 								"x": 3,
 								"y": 4
@@ -152,19 +540,450 @@
 			},
 			"properties": {},
 			"functions": {
-				"onKeyDown": "function (data)\n{\n\t/*\n\tvar omino = wade.getSceneObject('Omino');\n\tif (data.keyName == 'a') {\n\t    omino.playAnimation('Walk_left');\n\t    omino.moveTo(omino.getPosition().x-5,omino.getPosition().y);\n\t}\n\t*/\n}",
-				"onKeyPress": "function (data)\n{\n\t/* nope, i want a continuous move until the key is released\n\tvar omino = wade.getSceneObject('Omino');\n\tif (data.charName == 'a') {\n\t    omino.playAnimation('Walk_left');\n\t    omino.moveTo(omino.getPosition().x-5,omino.getPosition().y);\n\t}\n\t*/\n}",
-				"onUpdate": "function (data)\n{\n\tif (wade.isKeyDown ('left')) {\n\t    if (this.getSprite().getCurrentAnimationName()!='Walk_left')  this.playAnimation('Walk_left');\n\t    this.moveTo(this.getPosition().x-2,this.getPosition().y);\n\t} else if (wade.isKeyDown('right')) {\n\t    if (this.getSprite().getCurrentAnimationName()!='Walk_right')  this.playAnimation('Walk_right');\n\t    this.moveTo(this.getPosition().x-2,this.getPosition().y);\n\t} else {\n\t    // ????? Display the original image of the sprite\n\t    //this.getSpriteByName('Still')\n\t}\n\t\n\t\n}"
+				"onKeyDown": "function (data)\n{\n\t\n}",
+				"onKeyPress": "function (data)\n{\n\tvar omino = wade.getSceneObject('Omino');\n\tif (data.charName == 'q') {\n\t    var palla = wade.getSceneObject('Palla').clone();\n\t    palla.setPosition(omino.getPosition().x+50,omino.getPosition().y+20);\n\t    wade.addSceneObject(palla);\n\t    \n\t}\n\t\n}",
+				"onUpdate": "function (data)\n{\n\t\n\tif (wade.isKeyDown ('left')) {\n\t    if (this.getSprite().getCurrentAnimationName()!='Walk_left')  this.playAnimation('Walk_left');\n\t    this.moveTo(this.getPosition().x-2,this.getPosition().y);\n\t} else if (wade.isKeyDown('right')) {\n\t    if (this.getSprite().getCurrentAnimationName()!='Walk_right')  this.playAnimation('Walk_right');\n\t    this.moveTo(this.getPosition().x+2,this.getPosition().y);\n\t} else {\n\t    this.playAnimation('default');\n\t    //this.getSpriteByName('Still')\n\t}\n\t\n\t\n}",
+				"onCollision": "function (data)\n{\n\tconsole.log(\"Omino hits something \" + Math.random());\n\t//this.stopMoving();\n\t//var ot = data.otherObject;\n\t//ot.moveTo(ot.getPosition().x-50,ot.getPosition().y,50);\n\t\n}",
+				"onOverlap": "function (data)\n{\n\t//var ot = data.otherObject;\n\t//ot.moveTo(ot.getPosition().x-50,ot.getPosition().y,50);\n}"
 			}
 		},
 		{
 			"type": "SceneObject",
 			"position": {
-				"x": -360.87851403839574,
-				"y": 99.90679631587679
+				"x": -238.87851403839574,
+				"y": 5.9067963158767895
 			},
 			"rotation": 0,
-			"behaviors": [],
+			"behaviors": [
+				{
+					"name": "TilemapCharacter",
+					"properties": {
+						"drawCollisionBox": false,
+						"maxPathLength": 18,
+						"automaticRotations": false,
+						"rotationOffset": 0,
+						"allowDiagonal": true,
+						"allowInput": true,
+						"movementSpeed": 100,
+						"controls": {
+							"up": 38,
+							"down": 40,
+							"left": 37,
+							"right": 39
+						},
+						"gamePadIndex": 0,
+						"gamePadControls": {
+							"up": {
+								"axis": 1,
+								"axisDirection": -1,
+								"buttons": []
+							},
+							"down": {
+								"axis": 1,
+								"axisDirection": 1,
+								"buttons": []
+							},
+							"left": {
+								"axis": 0,
+								"axisDirection": -1,
+								"buttons": []
+							},
+							"right": {
+								"axis": 0,
+								"axisDirection": 1,
+								"buttons": []
+							}
+						},
+						"_gamepadStates": {
+							"up": false,
+							"down": false,
+							"left": false,
+							"right": false
+						},
+						"_keyStates": {
+							"up": false,
+							"down": false,
+							"left": false,
+							"right": false
+						},
+						"animations": {
+							"idle_n": "default",
+							"idle_ne": "default",
+							"idle_e": "default",
+							"idle_se": "default",
+							"idle_s": "default",
+							"idle_sw": "default",
+							"idle_w": "default",
+							"idle_nw": "default",
+							"walk_n": "default",
+							"walk_ne": "default",
+							"walk_e": "Walk_right",
+							"walk_se": "default",
+							"walk_s": "default",
+							"walk_sw": "default",
+							"walk_w": "Walk_left",
+							"walk_nw": "default"
+						},
+						"velocity": {
+							"x": 20,
+							"y": 20
+						}
+					},
+					"functions": {
+						"generateCollisionBox": {
+							"name": "generateCollisionBox",
+							"args": []
+						},
+						"onAddToScene": {
+							"name": "onAddToScene",
+							"args": [
+								"params"
+							]
+						},
+						"setRotationOffset": {
+							"name": "setRotationOffset",
+							"args": [
+								"offset"
+							]
+						},
+						"_inputState": {
+							"name": "_inputState",
+							"args": [
+								"direction"
+							]
+						},
+						"calcFutureCoords": {
+							"name": "calcFutureCoords",
+							"args": [
+								"pos",
+								"vel"
+							]
+						},
+						"inGrid": {
+							"name": "inGrid",
+							"args": [
+								"x",
+								"y"
+							]
+						},
+						"boxInGrid": {
+							"name": "boxInGrid",
+							"args": [
+								"box"
+							]
+						},
+						"velocityToDirection": {
+							"name": "velocityToDirection",
+							"args": [
+								"vel"
+							]
+						},
+						"updateGamepadState": {
+							"name": "updateGamepadState",
+							"args": []
+						},
+						"onKeyDown": {
+							"name": "onKeyDown",
+							"args": [
+								"data"
+							]
+						},
+						"onKeyUp": {
+							"name": "onKeyUp",
+							"args": [
+								"data"
+							]
+						},
+						"updateVelComponent": {
+							"name": "updateVelComponent",
+							"args": [
+								"noMove",
+								"vel",
+								"direction"
+							]
+						},
+						"updateVelocity": {
+							"name": "updateVelocity",
+							"args": []
+						},
+						"updateAnimation": {
+							"name": "updateAnimation",
+							"args": [
+								"direction",
+								"noMove"
+							]
+						},
+						"illegalTile": {
+							"name": "illegalTile",
+							"args": [
+								"dest",
+								"exception"
+							]
+						},
+						"overlappingTerrainTiles": {
+							"name": "overlappingTerrainTiles",
+							"args": [
+								"displace"
+							]
+						},
+						"handleTileTransition": {
+							"name": "handleTileTransition",
+							"args": [
+								"futureCoords"
+							]
+						},
+						"setRotation": {
+							"name": "setRotation",
+							"args": [
+								"newAngle"
+							]
+						},
+						"resolveRotation": {
+							"name": "resolveRotation",
+							"args": [
+								"newAngle",
+								"theta"
+							]
+						},
+						"onUpdate": {
+							"name": "onUpdate",
+							"args": []
+						},
+						"_goToNextDestination": {
+							"name": "_goToNextDestination",
+							"args": []
+						},
+						"clearDestinations": {
+							"name": "clearDestinations",
+							"args": []
+						},
+						"getNextDestination": {
+							"name": "getNextDestination",
+							"args": []
+						},
+						"tileCoordinates": {
+							"name": "tileCoordinates",
+							"args": []
+						},
+						"setDestination": {
+							"name": "setDestination",
+							"args": [
+								"gridCoords"
+							]
+						},
+						"onMoveComplete": {
+							"name": "onMoveComplete",
+							"args": []
+						}
+					},
+					"tips": {
+						"generateCollisionBox": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.generateCollisionBox</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Constructs a collision box based on the bounding boxes of all sprites belonging to the scene object.\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> object </span>: Returns a collision box of form {minX, minY, maxX, maxY}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onAddToScene": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onAddToScene</b><i> (params)\r</i></div><br/><span class=\"code_tooltip_description\"> Initialises the collision box and sets the local rotation value from the parent\r</span><br/><span class=\"code_tooltip_description\"> If drawCollisionBox flag is true, draws the debug collision box\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> object </span>: Returns a collision box of form {minX, minY, maxX, maxY}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"name": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.name</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The name of the behavior. This is set to 'TilemapCharacter'.\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"automaticRotations": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.automaticRotations</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Automatically rotates object to match movement\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"rotationOffset": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.rotationOffset</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Used for automatic rotations. A sprite can have any orientation\r</span><br/><span class=\"code_tooltip_description\"> This offset is used when calculate the rotation angles for each direction\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"setRotationOffset": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.setRotationOffset</b><i> (offset)\r</i></div><br/><span class=\"code_tooltip_description\"> Calculates the rotations needed for the character\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> offset </span>: <span class=\"code_tooltip_description\">The rotation offset to use when automatic rotations is enabled\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"allowDiagonal": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.allowDiagonal</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Whether or not to allow diagonal movement, true by default\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"allowInput": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.allowInput</b><i> </i></div><br/><span class=\"code_tooltip_description\"> A flag that specifies if the character can be controlled by player input\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"movementSpeed": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.movementSpeed</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The movement speed of the character (in world units per second). Note that changing this won't affect any movement that is currently in progress, only future movements. Default is 160.\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"controls": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.controls</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Keyboard keys to control the character. By default arrow keys are used\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"gamePadIndex": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.gamePadIndex</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The game pad to use\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"gamePadControls": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.gamePadControls</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Axis and direction of gamepad controls\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"_gamepadStates": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter._gamepadStates</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Current state of the gamepad to base movement off\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"_keyStates": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter._keyStates</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Current state of the keys to base movement off\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"_inputState": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter._inputState</b><i> (direction)\r</i></div><br/><span class=\"code_tooltip_description\"> Looks at both keyboard and gamepad state data to determine movement\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> direction </span>: <span class=\"code_tooltip_description\">The direction we are wanting to move\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> * </span>: Whether or not there is input for the provided direction\r</span></span><br/><span class=\"code_tooltip_description\"> @private\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"animations": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.animations</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Specify the animation names to use for various walking and idle states\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"velocity": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.velocity</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Current velocity of the object\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"calcFutureCoords": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.calcFutureCoords</b><i> (pos, vel)\r</i></div><br/><span class=\"code_tooltip_description\"> Applies one tick of velocity to the position, and returns the final cell co-ordinates\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> pos </span>: <span class=\"code_tooltip_description\">The current position\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> vel </span>: <span class=\"code_tooltip_description\">The current velocity in units per second\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> * </span>: The cell co-ordinates we will be in\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"inGrid": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.inGrid</b><i> (x, y)\r</i></div><br/><span class=\"code_tooltip_description\"> Helper Function - Returns whether the co-ordinates are inside the tilemap boundary\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> x </span>: <span class=\"code_tooltip_description\">The x cell co-ordinate\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> y </span>: <span class=\"code_tooltip_description\">The y cell co-ordinate\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Returns true if co-ordinates exist on map\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"boxInGrid": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.boxInGrid</b><i> (box)\r</i></div><br/><span class=\"code_tooltip_description\">\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> box </span>: <span class=\"code_tooltip_description\">Takes a bounding box in the form (minX, minY, maxX, maxY}\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Returns true if the bounding box is completely inside the tilemap area\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"velocityToDirection": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.velocityToDirection</b><i> (vel)\r</i></div><br/><span class=\"code_tooltip_description\"> Returns the closest movement direction given a provided velocity\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> vel </span>: <span class=\"code_tooltip_description\">Velocity or unit vector to calculate direction from\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateGamepadState": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateGamepadState</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Samples the gamepad to get the current states of the buttons and axis\r</span><br/><span class=\"code_tooltip_description\"> If buttons are pressed, the state is stored in this._gamepadStates\r</span><br/><span class=\"code_tooltip_description\"> Analog values that exceed a threshold value are also stored as true in this._gamepadStates\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onKeyDown": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onKeyDown</b><i> (data)\r</i></div><br/><span class=\"code_tooltip_description\"> Updates keyboard state\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> data </span>: <span class=\"code_tooltip_description\">Event data that specifies keyCode among other things\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> : {boolean}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onKeyUp": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onKeyUp</b><i> (data)\r</i></div><br/><span class=\"code_tooltip_description\"> Updates keyboard state\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> data </span>: <span class=\"code_tooltip_description\">Event data that specifies keyCode among other things\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> : {boolean}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateVelComponent": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateVelComponent</b><i> (noMove, vel, direction)\r</i></div><br/><span class=\"code_tooltip_description\"> Adds a direction velocity, taking into account diagonal motion\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> noMove </span>: <span class=\"code_tooltip_description\">Whether or not a velocity component has already been added\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> vel </span>: <span class=\"code_tooltip_description\">The current velocity\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> direction </span>: <span class=\"code_tooltip_description\">A string representing the compass direction\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateVelocity": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateVelocity</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Updates the velocity and calculates the closest direction for the animation system\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> {noMove: boolean, vel: {x: number, y: number}, direction: *} </span>: Data relevant to resolving movement\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateAnimation": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateAnimation</b><i> (direction, noMove)\r</i></div><br/><span class=\"code_tooltip_description\"> Plays the correct animation depending on the control input state\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> direction </span>: <span class=\"code_tooltip_description\">A string represent the compass direction that most closely matches the characters movement\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> noMove </span>: <span class=\"code_tooltip_description\">A flag specifying that no input controls are active\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"illegalTile": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.illegalTile</b><i> (dest, exception)\r</i></div><br/><span class=\"code_tooltip_description\"> Returns true if either the tile is off the grid, or the tile contains a collidable object\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> dest </span>: <span class=\"code_tooltip_description\">Co-ordinates of the tile to test\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean|* </span>: Is the move illegal\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"overlappingTerrainTiles": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.overlappingTerrainTiles</b><i> (displace)\r</i></div><br/><span class=\"code_tooltip_description\"> Returns tile co-ordinates of all terrain tiles overlapping the character\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> Array </span>: The terrain tile co-ordinates\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"handleTileTransition": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.handleTileTransition</b><i> (futureCoords)\r</i></div><br/><span class=\"code_tooltip_description\"> Tests and handles moving into a new tile\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> futureCoords </span>: <span class=\"code_tooltip_description\">The characters co-ordinates after velocity has been applied in world space\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onUpdate": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onUpdate</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Update character state based on user input\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"clearDestinations": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.clearDestinations</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Remove any destinations that were added with setDestination()\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"getNextDestination": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.getNextDestination</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Get the next destination\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> Object </span>: An object with x and y fields representing the next destination, or null if there are no destinations in the queue\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"setDestination": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.setDestination</b><i> (gridCoords)\r</i></div><br/><span class=\"code_tooltip_description\"> Set a destination (a tile to move to) for the character.\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> {x: number, y: number} </span> <span class=\"code_tooltip_param_name\"> gridCoords </span>: <span class=\"code_tooltip_description\">The tilemap coordinates to move to\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Whether it was possible to add the destination (i.e. it isn't blocked by objects with collisions)\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						]
+					}
+				}
+			],
 			"sprites": [
 				{
 					"type": "Sprite",
@@ -186,7 +1005,34 @@
 								"maxY": 1
 							},
 							"speed": 8,
-							"looping": false,
+							"looping": true,
+							"playMode": "forward",
+							"autoResize": true,
+							"offset": {
+								"x": 0,
+								"y": 0
+							},
+							"stopped": false,
+							"properties": {}
+						},
+						"Walk_left": {
+							"type": "Animation",
+							"name": "Walk_left",
+							"startFrame": 3,
+							"endFrame": 5,
+							"numCells": {
+								"x": 3,
+								"y": 4
+							},
+							"image": "boy tan salopette.png",
+							"imageArea": {
+								"minX": 0,
+								"minY": 0,
+								"maxX": 1,
+								"maxY": 1
+							},
+							"speed": 8,
+							"looping": true,
 							"playMode": "forward",
 							"autoResize": true,
 							"offset": {
@@ -245,7 +1091,570 @@
 				"autoListen": true,
 				"params": null
 			},
-			"properties": {}
+			"properties": {},
+			"functions": {
+				"onUpdate": "function (data)\n{\n\t\n}",
+				"onKeyUp": "function (data)\n{\n\t//console.log(data.keyCode);\n}"
+			}
+		},
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": 175,
+				"y": -65
+			},
+			"rotation": 0,
+			"behaviors": [
+				{
+					"name": "PhysicsObject",
+					"properties": {
+						"customEditor": {
+							"title": "Edit Physics Shapes",
+							"module": "physicsShapeEditor"
+						},
+						"bodyType": "static",
+						"bodyType_options": [
+							"static",
+							"dynamic",
+							"kinematic"
+						],
+						"bullet": false,
+						"gravityScale": 0,
+						"linearDamping": 0,
+						"angularDamping": 0,
+						"fixedRotation": false,
+						"allowSleeping": true,
+						"active": true,
+						"fixtures": {
+							"0": {
+								"density": 1,
+								"friction": 1,
+								"restitution": 1,
+								"shapeType": "box",
+								"shapeType_options": [
+									"box",
+									"circle",
+									"polygon",
+									"edge",
+									"chain",
+									"loopChain"
+								],
+								"spriteIndex": 0,
+								"isSensor": false,
+								"autoCalculateShape": true,
+								"filter": {
+									"groupIndex": 0,
+									"categoryBits": 1,
+									"maskBits": 65535
+								},
+								"offset": {
+									"x": 0,
+									"y": 0,
+									"ang": 0
+								},
+								"vertices": [
+									{
+										"x": 0,
+										"y": 0
+									}
+								]
+							},
+							"isPseudoArray": true,
+							"length": 1,
+							"elementTemplate": {
+								"density": 1,
+								"friction": 0.5,
+								"restitution": 1,
+								"shapeType": "box",
+								"shapeType_options": [
+									"box",
+									"circle",
+									"polygon",
+									"edge",
+									"chain",
+									"loopChain"
+								],
+								"spriteIndex": 0,
+								"isSensor": false,
+								"autoCalculateShape": true,
+								"filter": {
+									"groupIndex": 0,
+									"categoryBits": 1,
+									"maskBits": 65535
+								},
+								"offset": {
+									"x": 0,
+									"y": 0,
+									"ang": 0
+								},
+								"vertices": [
+									{
+										"x": 0,
+										"y": 0
+									}
+								]
+							}
+						}
+					},
+					"functions": {
+						"onAddToScene": {
+							"name": "onAddToScene",
+							"args": [
+								"a"
+							]
+						},
+						"onRemoveFromScene": {
+							"name": "onRemoveFromScene",
+							"args": []
+						},
+						"isAwake": {
+							"name": "isAwake",
+							"args": []
+						},
+						"setAwake": {
+							"name": "setAwake",
+							"args": [
+								"b"
+							]
+						},
+						"addFixture": {
+							"name": "addFixture",
+							"args": [
+								"b"
+							]
+						},
+						"removeFixture": {
+							"name": "removeFixture",
+							"args": [
+								"b"
+							]
+						},
+						"getFixtureList": {
+							"name": "getFixtureList",
+							"args": []
+						},
+						"getJointList": {
+							"name": "getJointList",
+							"args": []
+						},
+						"getDefinition": {
+							"name": "getDefinition",
+							"args": []
+						},
+						"applyForce": {
+							"name": "applyForce",
+							"args": [
+								"b",
+								"c",
+								"d"
+							]
+						},
+						"applyImpulse": {
+							"name": "applyImpulse",
+							"args": [
+								"b",
+								"c",
+								"d"
+							]
+						},
+						"applyTorque": {
+							"name": "applyTorque",
+							"args": [
+								"b"
+							]
+						},
+						"addMouseJoint": {
+							"name": "addMouseJoint",
+							"args": [
+								"b"
+							]
+						},
+						"updateMouseJoint": {
+							"name": "updateMouseJoint",
+							"args": [
+								"a",
+								"b"
+							]
+						},
+						"removeMouseJoint": {
+							"name": "removeMouseJoint",
+							"args": [
+								"a"
+							]
+						},
+						"onUpdate": {
+							"name": "onUpdate",
+							"args": []
+						},
+						"draw_": {
+							"name": "draw_",
+							"args": [
+								"b",
+								"c"
+							]
+						},
+						"clone": {
+							"name": "clone",
+							"args": [
+								"b"
+							]
+						},
+						"addJoint": {
+							"name": "addJoint",
+							"args": [
+								"a"
+							]
+						},
+						"removeJoint": {
+							"name": "removeJoint",
+							"args": [
+								"a"
+							]
+						},
+						"getB2dBody": {
+							"name": "getB2dBody",
+							"args": []
+						}
+					},
+					"tips": {}
+				}
+			],
+			"sprites": [
+				{
+					"type": "Sprite",
+					"animations": {},
+					"currentAnimation": "default",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 1,
+					"autoResize": false,
+					"visible": true,
+					"image": "procedural_square",
+					"imageArea": {
+						"minX": 0,
+						"minY": 0,
+						"maxX": 1,
+						"maxY": 1
+					},
+					"alwaysDraw": false,
+					"name": "Wall",
+					"drawModifiers": [],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 64,
+						"y": 231.38410035661428
+					}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"grid": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "SceneObject_0",
+			"isTemplate": false,
+			"path": "",
+			"addToScene": {
+				"autoListen": true,
+				"params": null
+			},
+			"properties": {},
+			"functions": {
+				"onCollision": "function (data)\n{\n\tconsole.log(\"Wall hits something \" + Math.random());\n}"
+			}
+		},
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": -21,
+				"y": -254
+			},
+			"rotation": 0,
+			"behaviors": [
+				{
+					"name": "PhysicsObject",
+					"properties": {
+						"customEditor": {
+							"title": "Edit Physics Shapes",
+							"module": "physicsShapeEditor"
+						},
+						"bodyType": "dynamic",
+						"bodyType_options": [
+							"static",
+							"dynamic",
+							"kinematic"
+						],
+						"bullet": false,
+						"gravityScale": 0,
+						"linearDamping": 0,
+						"angularDamping": 0,
+						"fixedRotation": false,
+						"allowSleeping": true,
+						"active": true,
+						"fixtures": {
+							"0": {
+								"density": 1,
+								"friction": 0.5,
+								"restitution": 1,
+								"shapeType": "box",
+								"shapeType_options": [
+									"box",
+									"circle",
+									"polygon",
+									"edge",
+									"chain",
+									"loopChain"
+								],
+								"spriteIndex": 0,
+								"isSensor": false,
+								"autoCalculateShape": true,
+								"filter": {
+									"groupIndex": 0,
+									"categoryBits": 1,
+									"maskBits": 65535
+								},
+								"offset": {
+									"x": 0,
+									"y": 0,
+									"ang": 0
+								},
+								"vertices": [
+									{
+										"x": 0,
+										"y": 0
+									}
+								]
+							},
+							"isPseudoArray": true,
+							"length": 1,
+							"elementTemplate": {
+								"density": 1,
+								"friction": 0.5,
+								"restitution": 1,
+								"shapeType": "box",
+								"shapeType_options": [
+									"box",
+									"circle",
+									"polygon",
+									"edge",
+									"chain",
+									"loopChain"
+								],
+								"spriteIndex": 0,
+								"isSensor": false,
+								"autoCalculateShape": true,
+								"filter": {
+									"groupIndex": 0,
+									"categoryBits": 1,
+									"maskBits": 65535
+								},
+								"offset": {
+									"x": 0,
+									"y": 0,
+									"ang": 0
+								},
+								"vertices": [
+									{
+										"x": 0,
+										"y": 0
+									}
+								]
+							}
+						}
+					},
+					"functions": {
+						"onAddToScene": {
+							"name": "onAddToScene",
+							"args": [
+								"a"
+							]
+						},
+						"onRemoveFromScene": {
+							"name": "onRemoveFromScene",
+							"args": []
+						},
+						"isAwake": {
+							"name": "isAwake",
+							"args": []
+						},
+						"setAwake": {
+							"name": "setAwake",
+							"args": [
+								"b"
+							]
+						},
+						"addFixture": {
+							"name": "addFixture",
+							"args": [
+								"b"
+							]
+						},
+						"removeFixture": {
+							"name": "removeFixture",
+							"args": [
+								"b"
+							]
+						},
+						"getFixtureList": {
+							"name": "getFixtureList",
+							"args": []
+						},
+						"getJointList": {
+							"name": "getJointList",
+							"args": []
+						},
+						"getDefinition": {
+							"name": "getDefinition",
+							"args": []
+						},
+						"applyForce": {
+							"name": "applyForce",
+							"args": [
+								"b",
+								"c",
+								"d"
+							]
+						},
+						"applyImpulse": {
+							"name": "applyImpulse",
+							"args": [
+								"b",
+								"c",
+								"d"
+							]
+						},
+						"applyTorque": {
+							"name": "applyTorque",
+							"args": [
+								"b"
+							]
+						},
+						"addMouseJoint": {
+							"name": "addMouseJoint",
+							"args": [
+								"b"
+							]
+						},
+						"updateMouseJoint": {
+							"name": "updateMouseJoint",
+							"args": [
+								"a",
+								"b"
+							]
+						},
+						"removeMouseJoint": {
+							"name": "removeMouseJoint",
+							"args": [
+								"a"
+							]
+						},
+						"onUpdate": {
+							"name": "onUpdate",
+							"args": []
+						},
+						"draw_": {
+							"name": "draw_",
+							"args": [
+								"b",
+								"c"
+							]
+						},
+						"clone": {
+							"name": "clone",
+							"args": [
+								"b"
+							]
+						},
+						"addJoint": {
+							"name": "addJoint",
+							"args": [
+								"a"
+							]
+						},
+						"removeJoint": {
+							"name": "removeJoint",
+							"args": [
+								"a"
+							]
+						},
+						"getB2dBody": {
+							"name": "getB2dBody",
+							"args": []
+						}
+					},
+					"tips": {}
+				}
+			],
+			"sprites": [
+				{
+					"type": "Sprite",
+					"animations": {},
+					"currentAnimation": "default",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 1,
+					"autoResize": false,
+					"visible": true,
+					"image": "procedural_circle",
+					"imageArea": {
+						"minX": 0,
+						"minY": 0,
+						"maxX": 1,
+						"maxY": 1
+					},
+					"alwaysDraw": false,
+					"name": "White",
+					"drawModifiers": [],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 33.57032134474341,
+						"y": 33.57032134474341
+					}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"grid": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "Palla",
+			"isTemplate": true,
+			"path": "",
+			"addToScene": {
+				"autoListen": true,
+				"params": null
+			},
+			"properties": {},
+			"functions": {
+				"onAddToScene": "function (data)\n{\n\tthis.moveTo(1000,this.getPosition().y,100);\n}",
+				"onCollision": "function (data)\n{\n\tthis.moveTo(this.getPosition().x,600,100);\n}"
+			}
 		}
 	],
 	"paths": [],
@@ -291,5 +1700,8 @@
 	"defaultLayer": 1,
 	"timeline": {
 		"events": []
-	}
+	},
+	"scripts": [
+		"wade.physics.js"
+	]
 }

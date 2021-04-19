@@ -7,7 +7,6 @@ App = function()
 		wade.loadScene('main_scene.wsc', true, function()
         {
             // the scene has been loaded, do something here
-
         });
 	};
 };
