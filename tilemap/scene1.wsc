@@ -1,0 +1,806 @@
+{
+	"sceneObjects": [
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": 101.94792587306657,
+				"y": 51.33165142517403
+			},
+			"rotation": 0,
+			"behaviors": [
+				{
+					"name": "TilemapCharacter",
+					"properties": {
+						"drawCollisionBox": false,
+						"maxPathLength": 18,
+						"automaticRotations": false,
+						"rotationOffset": 0,
+						"allowDiagonal": true,
+						"allowInput": false,
+						"movementSpeed": 100,
+						"controls": {
+							"up": 38,
+							"down": 40,
+							"left": 37,
+							"right": 39
+						},
+						"gamePadIndex": 0,
+						"gamePadControls": {
+							"up": {
+								"axis": 1,
+								"axisDirection": -1,
+								"buttons": []
+							},
+							"down": {
+								"axis": 1,
+								"axisDirection": 1,
+								"buttons": []
+							},
+							"left": {
+								"axis": 0,
+								"axisDirection": -1,
+								"buttons": []
+							},
+							"right": {
+								"axis": 0,
+								"axisDirection": 1,
+								"buttons": []
+							}
+						},
+						"_gamepadStates": {
+							"up": false,
+							"down": false,
+							"left": false,
+							"right": false
+						},
+						"_keyStates": {
+							"up": false,
+							"down": false,
+							"left": false,
+							"right": false
+						},
+						"animations": {
+							"idle_n": "idle_n",
+							"idle_ne": "idle_ne",
+							"idle_e": "idle_e",
+							"idle_se": "idle_se",
+							"idle_s": "idle_s",
+							"idle_sw": "idle_sw",
+							"idle_w": "idle_w",
+							"idle_nw": "idle_nw",
+							"walk_n": "walk_n",
+							"walk_ne": "walk_ne",
+							"walk_e": "walk_e",
+							"walk_se": "walk_se",
+							"walk_s": "walk_s",
+							"walk_sw": "walk_sw",
+							"walk_w": "walk_w",
+							"walk_nw": "walk_nw"
+						},
+						"velocity": {
+							"x": 0,
+							"y": 0
+						}
+					},
+					"functions": {
+						"generateCollisionBox": {
+							"name": "generateCollisionBox",
+							"args": []
+						},
+						"onAddToScene": {
+							"name": "onAddToScene",
+							"args": [
+								"params"
+							]
+						},
+						"setRotationOffset": {
+							"name": "setRotationOffset",
+							"args": [
+								"offset"
+							]
+						},
+						"_inputState": {
+							"name": "_inputState",
+							"args": [
+								"direction"
+							]
+						},
+						"calcFutureCoords": {
+							"name": "calcFutureCoords",
+							"args": [
+								"pos",
+								"vel"
+							]
+						},
+						"inGrid": {
+							"name": "inGrid",
+							"args": [
+								"x",
+								"y"
+							]
+						},
+						"boxInGrid": {
+							"name": "boxInGrid",
+							"args": [
+								"box"
+							]
+						},
+						"velocityToDirection": {
+							"name": "velocityToDirection",
+							"args": [
+								"vel"
+							]
+						},
+						"updateGamepadState": {
+							"name": "updateGamepadState",
+							"args": []
+						},
+						"onKeyDown": {
+							"name": "onKeyDown",
+							"args": [
+								"data"
+							]
+						},
+						"onKeyUp": {
+							"name": "onKeyUp",
+							"args": [
+								"data"
+							]
+						},
+						"updateVelComponent": {
+							"name": "updateVelComponent",
+							"args": [
+								"noMove",
+								"vel",
+								"direction"
+							]
+						},
+						"updateVelocity": {
+							"name": "updateVelocity",
+							"args": []
+						},
+						"updateAnimation": {
+							"name": "updateAnimation",
+							"args": [
+								"direction",
+								"noMove"
+							]
+						},
+						"illegalTile": {
+							"name": "illegalTile",
+							"args": [
+								"dest",
+								"exception"
+							]
+						},
+						"overlappingTerrainTiles": {
+							"name": "overlappingTerrainTiles",
+							"args": [
+								"displace"
+							]
+						},
+						"handleTileTransition": {
+							"name": "handleTileTransition",
+							"args": [
+								"futureCoords"
+							]
+						},
+						"setRotation": {
+							"name": "setRotation",
+							"args": [
+								"newAngle"
+							]
+						},
+						"resolveRotation": {
+							"name": "resolveRotation",
+							"args": [
+								"newAngle",
+								"theta"
+							]
+						},
+						"onUpdate": {
+							"name": "onUpdate",
+							"args": []
+						},
+						"_goToNextDestination": {
+							"name": "_goToNextDestination",
+							"args": []
+						},
+						"clearDestinations": {
+							"name": "clearDestinations",
+							"args": []
+						},
+						"getNextDestination": {
+							"name": "getNextDestination",
+							"args": []
+						},
+						"tileCoordinates": {
+							"name": "tileCoordinates",
+							"args": []
+						},
+						"setDestination": {
+							"name": "setDestination",
+							"args": [
+								"gridCoords"
+							]
+						},
+						"onMoveComplete": {
+							"name": "onMoveComplete",
+							"args": []
+						}
+					},
+					"tips": {
+						"generateCollisionBox": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.generateCollisionBox</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Constructs a collision box based on the bounding boxes of all sprites belonging to the scene object.\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> object </span>: Returns a collision box of form {minX, minY, maxX, maxY}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onAddToScene": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onAddToScene</b><i> (params)\r</i></div><br/><span class=\"code_tooltip_description\"> Initialises the collision box and sets the local rotation value from the parent\r</span><br/><span class=\"code_tooltip_description\"> If drawCollisionBox flag is true, draws the debug collision box\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> object </span>: Returns a collision box of form {minX, minY, maxX, maxY}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"name": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.name</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The name of the behavior. This is set to 'TilemapCharacter'.\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"automaticRotations": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.automaticRotations</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Automatically rotates object to match movement\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"rotationOffset": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.rotationOffset</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Used for automatic rotations. A sprite can have any orientation\r</span><br/><span class=\"code_tooltip_description\"> This offset is used when calculate the rotation angles for each direction\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"setRotationOffset": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.setRotationOffset</b><i> (offset)\r</i></div><br/><span class=\"code_tooltip_description\"> Calculates the rotations needed for the character\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> offset </span>: <span class=\"code_tooltip_description\">The rotation offset to use when automatic rotations is enabled\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"allowDiagonal": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.allowDiagonal</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Whether or not to allow diagonal movement, true by default\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"allowInput": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.allowInput</b><i> </i></div><br/><span class=\"code_tooltip_description\"> A flag that specifies if the character can be controlled by player input\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"movementSpeed": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.movementSpeed</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The movement speed of the character (in world units per second). Note that changing this won't affect any movement that is currently in progress, only future movements. Default is 160.\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"controls": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.controls</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Keyboard keys to control the character. By default arrow keys are used\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"gamePadIndex": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.gamePadIndex</b><i> </i></div><br/><span class=\"code_tooltip_description\"> The game pad to use\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"gamePadControls": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.gamePadControls</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Axis and direction of gamepad controls\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"_gamepadStates": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter._gamepadStates</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Current state of the gamepad to base movement off\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"_keyStates": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter._keyStates</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Current state of the keys to base movement off\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"_inputState": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter._inputState</b><i> (direction)\r</i></div><br/><span class=\"code_tooltip_description\"> Looks at both keyboard and gamepad state data to determine movement\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> direction </span>: <span class=\"code_tooltip_description\">The direction we are wanting to move\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> * </span>: Whether or not there is input for the provided direction\r</span></span><br/><span class=\"code_tooltip_description\"> @private\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"animations": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.animations</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Specify the animation names to use for various walking and idle states\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"velocity": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.velocity</b><i> </i></div><br/><span class=\"code_tooltip_description\"> Current velocity of the object\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"calcFutureCoords": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.calcFutureCoords</b><i> (pos, vel)\r</i></div><br/><span class=\"code_tooltip_description\"> Applies one tick of velocity to the position, and returns the final cell co-ordinates\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> pos </span>: <span class=\"code_tooltip_description\">The current position\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> vel </span>: <span class=\"code_tooltip_description\">The current velocity in units per second\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> * </span>: The cell co-ordinates we will be in\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"inGrid": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.inGrid</b><i> (x, y)\r</i></div><br/><span class=\"code_tooltip_description\"> Helper Function - Returns whether the co-ordinates are inside the tilemap boundary\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> x </span>: <span class=\"code_tooltip_description\">The x cell co-ordinate\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> y </span>: <span class=\"code_tooltip_description\">The y cell co-ordinate\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Returns true if co-ordinates exist on map\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"boxInGrid": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.boxInGrid</b><i> (box)\r</i></div><br/><span class=\"code_tooltip_description\">\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> box </span>: <span class=\"code_tooltip_description\">Takes a bounding box in the form (minX, minY, maxX, maxY}\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Returns true if the bounding box is completely inside the tilemap area\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"velocityToDirection": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.velocityToDirection</b><i> (vel)\r</i></div><br/><span class=\"code_tooltip_description\"> Returns the closest movement direction given a provided velocity\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> vel </span>: <span class=\"code_tooltip_description\">Velocity or unit vector to calculate direction from\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateGamepadState": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateGamepadState</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Samples the gamepad to get the current states of the buttons and axis\r</span><br/><span class=\"code_tooltip_description\"> If buttons are pressed, the state is stored in this._gamepadStates\r</span><br/><span class=\"code_tooltip_description\"> Analog values that exceed a threshold value are also stored as true in this._gamepadStates\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onKeyDown": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onKeyDown</b><i> (data)\r</i></div><br/><span class=\"code_tooltip_description\"> Updates keyboard state\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> data </span>: <span class=\"code_tooltip_description\">Event data that specifies keyCode among other things\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> : {boolean}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onKeyUp": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onKeyUp</b><i> (data)\r</i></div><br/><span class=\"code_tooltip_description\"> Updates keyboard state\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> data </span>: <span class=\"code_tooltip_description\">Event data that specifies keyCode among other things\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> : {boolean}\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateVelComponent": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateVelComponent</b><i> (noMove, vel, direction)\r</i></div><br/><span class=\"code_tooltip_description\"> Adds a direction velocity, taking into account diagonal motion\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> noMove </span>: <span class=\"code_tooltip_description\">Whether or not a velocity component has already been added\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> vel </span>: <span class=\"code_tooltip_description\">The current velocity\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> direction </span>: <span class=\"code_tooltip_description\">A string representing the compass direction\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateVelocity": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateVelocity</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Updates the velocity and calculates the closest direction for the animation system\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> {noMove: boolean, vel: {x: number, y: number}, direction: *} </span>: Data relevant to resolving movement\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"updateAnimation": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.updateAnimation</b><i> (direction, noMove)\r</i></div><br/><span class=\"code_tooltip_description\"> Plays the correct animation depending on the control input state\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> direction </span>: <span class=\"code_tooltip_description\">A string represent the compass direction that most closely matches the characters movement\r</span></span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> noMove </span>: <span class=\"code_tooltip_description\">A flag specifying that no input controls are active\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"illegalTile": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.illegalTile</b><i> (dest, exception)\r</i></div><br/><span class=\"code_tooltip_description\"> Returns true if either the tile is off the grid, or the tile contains a collidable object\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> dest </span>: <span class=\"code_tooltip_description\">Co-ordinates of the tile to test\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean|* </span>: Is the move illegal\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"overlappingTerrainTiles": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.overlappingTerrainTiles</b><i> (displace)\r</i></div><br/><span class=\"code_tooltip_description\"> Returns tile co-ordinates of all terrain tiles overlapping the character\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> Array </span>: The terrain tile co-ordinates\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"handleTileTransition": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.handleTileTransition</b><i> (futureCoords)\r</i></div><br/><span class=\"code_tooltip_description\"> Tests and handles moving into a new tile\r</span><br/><span class=\"code_tooltip_description\"><br/>  <span class=\"code_tooltip_param_name\"> futureCoords </span>: <span class=\"code_tooltip_description\">The characters co-ordinates after velocity has been applied in world space\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"onUpdate": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.onUpdate</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Update character state based on user input\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"clearDestinations": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.clearDestinations</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Remove any destinations that were added with setDestination()\r</span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"getNextDestination": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.getNextDestination</b><i> ()\r</i></div><br/><span class=\"code_tooltip_description\"> Get the next destination\r</span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> Object </span>: An object with x and y fields representing the next destination, or null if there are no destinations in the queue\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						],
+						"setDestination": [
+							{
+								"tip": "<div class=\"code_tooltip_title\"><b>TilemapCharacter.setDestination</b><i> (gridCoords)\r</i></div><br/><span class=\"code_tooltip_description\"> Set a destination (a tile to move to) for the character.\r</span><br/><span class=\"code_tooltip_description\"><br/> <span class=\"code_tooltip_param_type\"> {x: number, y: number} </span> <span class=\"code_tooltip_param_name\"> gridCoords </span>: <span class=\"code_tooltip_description\">The tilemap coordinates to move to\r</span></span><br/><span class=\"code_tooltip_description\"><br/><span class=\"code_tooltip_description\"><span class=\"code_tooltip_returns\">Returns</span> <span class=\"code_tooltip_return_type\"> boolean </span>: Whether it was possible to add the destination (i.e. it isn't blocked by objects with collisions)\r</span></span><br/>",
+								"source": "TilemapCharacter"
+							}
+						]
+					}
+				}
+			],
+			"sprites": [
+				{
+					"type": "Sprite",
+					"animations": {},
+					"currentAnimation": "default",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 1,
+					"autoResize": false,
+					"visible": false,
+					"image": "monsters_01.png",
+					"imageArea": {
+						"minX": 0.5,
+						"minY": 0.1,
+						"maxX": 0.6,
+						"maxY": 0.2
+					},
+					"alwaysDraw": false,
+					"name": "Dwarf",
+					"drawModifiers": [
+						{
+							"type": "alpha",
+							"alpha": 1
+						}
+					],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 30,
+						"y": 30
+					}
+				},
+				{
+					"type": "Sprite",
+					"animations": {},
+					"currentAnimation": "default",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 1,
+					"autoResize": false,
+					"visible": false,
+					"image": "monsters_01.png",
+					"imageArea": {
+						"minX": 0.6,
+						"minY": 0.4,
+						"maxX": 0.7,
+						"maxY": 0.5
+					},
+					"alwaysDraw": false,
+					"name": "Gnome",
+					"drawModifiers": [
+						{
+							"type": "alpha",
+							"alpha": 1
+						}
+					],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 30,
+						"y": 30
+					}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				},
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"grid": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "objHero",
+			"isTemplate": false,
+			"path": "",
+			"addToScene": {
+				"autoListen": true,
+				"params": null
+			},
+			"properties": {},
+			"functions": {
+				"onAddToScene": "function (data)\n{\n\tthis.active_sprite = 0;\n\tvar sprite = this.getSprite(this.active_sprite);\n\tsprite.setVisible(true);\n\t\n\tconsole.log(\"Ciao. I'm a \" + sprite.getName());\n\tthis.mov_points = 3;\n\tthis.last_move = 0;\n\t\n\tthis.setPosition(\n\t    this.getPosition().x - (this.getPosition().x % 32),\n\t    this.getPosition().y - (this.getPosition().y % 32)\n\t    );\n\t\n\t\n\tthis.beforemove = {\n\t    x: this.getPosition().x,\n\t    y: this.getPosition().y\n\t};\n\t\n\t_.objScores.getSpriteByName(\"Movement points\").setText(this.mov_points);\n\t\n}",
+				"onUpdate": "function (data)\n{\n\t\n}",
+				"onCollision": "function (data)\n{\n\t\n}",
+				"onMoveComplete": "function (data)\n{\n\thero_onMoveComplete(this);\n}",
+				"onKeyDown": "function (data)\n{\n\t\n}",
+				"onKeyPress": "function (data)\n{\n\t\n}",
+				"onKeyUp": "function (data)\n{\n\t//check scene_one.js\n\t//console.log(\"A key was pressed\")\n\t//hero_onKeyUp(data,this);\n\t\n}",
+				"onOverlap": "function (data)\n{\n\tconsole.log(\"I'm touching something\");\n\t// it should not be a monster though\n\tthis.getBehavior(\"TilemapCharacter\").setDestination(this.old_coords);\n}"
+			}
+		},
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": -402.17596956570657,
+				"y": -26.0509414883645
+			},
+			"rotation": 0,
+			"behaviors": [],
+			"sprites": [
+				{
+					"type": "Sprite",
+					"animations": {},
+					"currentAnimation": "default",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 1,
+					"autoResize": false,
+					"visible": true,
+					"image": "monsters_01.png",
+					"imageArea": {
+						"minX": 0.3,
+						"minY": 0.1,
+						"maxX": 0.4,
+						"maxY": 0.2
+					},
+					"alwaysDraw": false,
+					"name": "Ugly01",
+					"drawModifiers": [
+						{
+							"type": "alpha",
+							"alpha": 1
+						}
+					],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 30,
+						"y": 30
+					}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"grid": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "Monsters",
+			"isTemplate": true,
+			"path": "",
+			"addToScene": {
+				"autoListen": true,
+				"params": {}
+			},
+			"properties": {
+				"HitPoints": 0
+			},
+			"functions": {
+				"onAddToScene": "function (data)\n{\n\t\n}",
+				"onAppTimer": "function (data)\n{\n\t\n}",
+				"onClick": "function (data)\n{\n\t\n}",
+				"onMouseDown": "function (data)\n{\n\tconsole.log(\"Hai cliccato un mostro\")\n\tvar corpse = _.Items.clone();\n\tcorpse.setPosition(this.getPosition().x, this.getPosition().y);\n\t\n\twade.removeSceneObject(this);\n\twade.addSceneObject(corpse,true);\n\t\n\t\n\treturn true; // stop event propagation\n}"
+			}
+		},
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": -106.42850676167352,
+				"y": 45.612217183574366
+			},
+			"rotation": 0,
+			"behaviors": [],
+			"sprites": [
+				{
+					"type": "TextSprite",
+					"text": "Mov: ",
+					"name": "Movement points",
+					"font": "12px Arial",
+					"alignment": "left",
+					"color": "#15d615",
+					"visible": true,
+					"layer": 1,
+					"maxWidth": 0,
+					"shadowColor": "#000",
+					"shadowBlur": 0,
+					"shadowOffset": {
+						"x": 0,
+						"y": 0
+					},
+					"lineSpacing": 1,
+					"maxLines": 0,
+					"firstLine": 0,
+					"outlineColor": "#e61774",
+					"outlineWidth": 0,
+					"boundsScale": {
+						"x": 1,
+						"y": 1
+					},
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"fixedSize": false,
+					"drawModifiers": [
+						{
+							"type": "alpha",
+							"alpha": 1
+						}
+					],
+					"properties": {}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"grid": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "objScores",
+			"isTemplate": false,
+			"path": "",
+			"addToScene": {
+				"autoListen": true,
+				"params": null
+			},
+			"properties": {},
+			"functions": {
+				"onAddToScene": "function (data)\n{\n\t\n\t\n}",
+				"onUpdate": "function (data)\n{\n\t\n}"
+			}
+		},
+		{
+			"type": "SceneObject",
+			"position": {
+				"x": -445,
+				"y": 134
+			},
+			"rotation": 0,
+			"behaviors": [],
+			"sprites": [
+				{
+					"type": "Sprite",
+					"animations": {},
+					"currentAnimation": "default",
+					"sortPoint": {
+						"x": 0,
+						"y": 0
+					},
+					"layer": 2,
+					"autoResize": false,
+					"visible": true,
+					"image": "items_01.png",
+					"imageArea": {
+						"minX": 0.6,
+						"minY": 0.5,
+						"maxX": 0.7,
+						"maxY": 0.6
+					},
+					"alwaysDraw": false,
+					"name": "Corpse",
+					"drawModifiers": [],
+					"pixelShader": "",
+					"pixelShaderUniforms": null,
+					"pixelPerfectMouseEvents": 0,
+					"properties": {},
+					"size": {
+						"x": 30,
+						"y": 30
+					}
+				}
+			],
+			"spriteOffsets": [
+				{
+					"x": 0,
+					"y": 0,
+					"angle": 0
+				}
+			],
+			"flowChart": null,
+			"grid": null,
+			"alignment": {
+				"x": "center",
+				"y": "center"
+			},
+			"name": "Items",
+			"isTemplate": true,
+			"path": "",
+			"addToScene": {
+				"autoListen": true,
+				"params": {}
+			},
+			"properties": {}
+		}
+	],
+	"paths": [],
+	"sceneObjectGroups": [],
+	"layers": [
+		null,
+		{
+			"scaleFactor": 1,
+			"translateFactor": 1,
+			"renderMode": "webgl",
+			"useQuadtree": true,
+			"resolutionFactor": 1,
+			"blur": 0,
+			"postProcessShader": "",
+			"postProcessShaderUniforms": null,
+			"properties": {}
+		},
+		{
+			"scaleFactor": 1,
+			"translateFactor": 1,
+			"renderMode": "webgl",
+			"useQuadtree": true,
+			"resolutionFactor": 1,
+			"blur": 0,
+			"postProcessShader": "",
+			"postProcessShaderUniforms": null,
+			"properties": {}
+		}
+	],
+	"minScreenSize": {
+		"x": 0,
+		"y": 0
+	},
+	"maxScreenSize": {
+		"x": 10000,
+		"y": 10000
+	},
+	"orientation": "none",
+	"windowMode": "full",
+	"defaultLayer": 1,
+	"timeline": {
+		"events": []
+	},
+	"scripts": [
+		"scene_one.js",
+		"load_dungeon.js"
+	]
+}
